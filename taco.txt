@@ -1,0 +1,70 @@
+def make
+  play ingredients
+  sleep 1
+end
+
+def ingredients
+  play shell
+  play tomatoes
+  play beef
+  play letuce
+  play cheese
+  play sourcream
+  play onions
+end
+
+def shell
+  sample :elec_pop
+  sleep 1
+end
+
+def tomatoes
+  sample :drum_splash_soft
+  sleep 1
+end
+
+def beef
+  sample :bass_thick_c
+  sleep 1
+end
+
+def letuce
+  sample :perc_snap
+  sleep 1
+end
+
+def cheese
+  sample :ambi_dark_woosh
+  sleep 1
+end
+
+def sourcream
+  sample :ambi_swoosh
+  sleep 1
+end
+
+def onions
+  sample :elec_twang
+end
+
+def eat
+  sample :misc_burp
+  sleep 1
+end
+
+def gassy?
+  1 == [1,2].choose
+end
+
+
+def bathroom
+  sample :bass_drop_c
+  sleep 1
+end
+
+
+6.times do
+  play make
+  play eat
+  bathroom if gassy?
+end

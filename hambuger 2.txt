@@ -1,0 +1,69 @@
+def make
+  play ingredients
+  sleep 1
+end
+
+def ingredients
+  play mustard
+  play tomatoes
+  play beef
+  play letuce(2)
+  play cheese
+  play pickles
+  play ketchup
+end
+
+def mustard
+  sample :ambi_piano
+  sleep 1
+end
+
+def tomatoes
+  sample :elec_blip2
+  sleep 1
+end
+
+def beef
+  sample :misc_cineboom
+  sleep 1
+end
+
+def letuce(rotten)
+  if rotten > 5
+    sample :drum_heavy_kick
+  end
+  if
+    rotten < 5
+    sample :ambi_lunar_land, rate: rotten
+    sleep 1
+    letuce(rotten+1)
+  end
+end
+
+def rotten
+  0
+end
+
+def cheese
+  sample :ambi_dark_woosh
+  sleep 1
+end
+
+def pickles
+  sample :ambi_swoosh
+  sleep 1
+end
+
+def ketchup
+  sample :elec_twang
+end
+
+def eat
+  sample :misc_burp
+  sleep 1
+end
+
+5.times do
+  play make
+  play eat
+end
